@@ -8,7 +8,6 @@ export {
   fetchMovieCast,
 };
 
-const API_KEY = import.meta.env.VITE_UNSPLASH_API_KEY;
 const AUTHORIZATION_TOKEN = import.meta.env.VITE_TMDB_AUTHORIZATION_TOKEN;
 const BASE_URL = 'https://api.themoviedb.org/3';
 const LANGUAGE = 'en-US';
@@ -17,7 +16,7 @@ const options = {
   method: 'GET',
   headers: {
     accept: 'application/json',
-    Authorization: `Bearer ${AUTHORIZATION_TOKEN}`
+    Authorization: `Bearer ${AUTHORIZATION_TOKEN}`,
   },
 };
 

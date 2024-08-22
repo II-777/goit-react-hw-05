@@ -28,10 +28,8 @@ const Reviews = () => {
   return (
     <div>
       <h3 className={css.title}>Movie Reviews</h3>
+      {(reviews !== null && reviews.length) === 0 && (<p>No reviews available.</p>)}
       <ul className={css.list}>
-        {(reviews !== null && reviews.length) === 0 && (
-          <p>No reviews available.</p>
-        )}
         {reviews !== null &&
           reviews.map((review) => {
             return (

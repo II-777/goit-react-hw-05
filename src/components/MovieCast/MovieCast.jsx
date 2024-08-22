@@ -40,7 +40,7 @@ const Cast = () => {
     <>
       {isLoading && <Loader />}
       {error && <p>{error}</p>}
-      
+
       <h3 className={css.title}>Movie Cast</h3>
       {cast.length > 0 ? (
         <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexWrap: 'wrap' }}>

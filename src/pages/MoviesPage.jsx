@@ -1,5 +1,6 @@
 // External Libraries
 import { useEffect, useState } from 'react';
+import { useSearchParams } from 'react-router-dom'; // Assuming useSearchParams is from react-router-dom
 // Components 
 import Loader from '../components/Loader/Loader';
 import MovieList from '../components/MovieList/MovieList';
@@ -13,6 +14,14 @@ const Movies = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [query, setQuery] = useState('');
   const [error, setError] = useState(null);
+  const [searchParams] = useSearchParams();
+  const movieName = searchParams.get('query') ?? '';
+
+  useEffect(() => {
+    if (movieName) {
+      onQueryChange(movieName);
+    }
+  }, [movieName]);
 
   useEffect(() => {
     if (!query) {
@@ -31,9 +40,9 @@ const Movies = () => {
         }
         setMovies(response);
       } catch (error) {
-        toast.error('Oops. Failed to retrieve movies.')
-        console.log(`${error.message}`)
-        setError(error.message);
+        toast.error('Oops. Failed to retrieve movies.');
+        console.log(`Error: ${error.message}`);
+        setError('Oops. Failed to retrieve movies.');
       } finally {
         setIsLoading(false);
       }
@@ -42,7 +51,7 @@ const Movies = () => {
     getMovieInfo();
   }, [query]);
 
-  const onQueryChange = searchQuery => {
+  const onQueryChange = (searchQuery) => {
     if (searchQuery === query) {
       return;
     }

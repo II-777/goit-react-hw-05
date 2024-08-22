@@ -1,7 +1,5 @@
 // External Libraries
 import { Grid } from 'react-loader-spinner';
-// Styles 
-import css from './Loader.module.css';
 
 const Loader = () => {
   return (

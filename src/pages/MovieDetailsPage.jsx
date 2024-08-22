@@ -100,7 +100,7 @@ const MovieDetails = () => {
               <Link
                 to="cast"
                 state={{ ...location.state }}
-                style={{ textDecoration: 'none', color: '#fff', display: 'flex', alignItems: 'center' }}
+                style={{ textDecoration: 'none', color: 'black', display: 'flex', alignItems: 'center' }}
               >
                 <span className="link-text">
                   <GiClapperboard size='32px' />
@@ -112,7 +112,7 @@ const MovieDetails = () => {
               <Link
                 to="reviews"
                 state={{ ...location.state }}
-                style={{ textDecoration: 'none', color: '#fff', display: 'flex', alignItems: 'center' }}
+                style={{ textDecoration: 'none', color: 'black', display: 'flex', alignItems: 'center' }}
               >
                 <span className="link-text">
                   <IoChatboxEllipses size='32px' />

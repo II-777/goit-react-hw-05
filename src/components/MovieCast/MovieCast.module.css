@@ -1,0 +1,19 @@
+.title {
+  text-align: center;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+}
+.listItem {
+  width: 160px;
+  max-width: 200px;
+}
+
+.actorPhoto {
+  height: 240px;
+  width: auto;
+}
